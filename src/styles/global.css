@@ -1,13 +1,17 @@
 :root {
-  color: #1c1915;
-  background: #f6f1e7;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: #14202b;
+  background: #f3f5f7;
+  font-family:
+    "Avenir Next",
+    "Segoe UI",
+    sans-serif;
   line-height: 1.5;
-  --ink: #1c1915;
-  --muted: #5c564c;
-  --teal: #0f6e56;
-  --paper: #fffaf3;
-  --line: #e2d8c8;
+  --ink: #14202b;
+  --muted: #5d6b76;
+  --teal: #0c6b5c;
+  --canvas: #f3f5f7;
+  --paper: #ffffff;
+  --line: #e3e7eb;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 
@@ -15,8 +19,29 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
+  background: var(--canvas);
+}
+
+@media (max-width: 800px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background: var(--paper);
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 a:focus-visible,

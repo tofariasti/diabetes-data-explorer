@@ -10,11 +10,20 @@
   gap: 1rem;
 }
 
-.grid section {
-  padding: 1.25rem 1.4rem 1.4rem;
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.4rem 1.3rem;
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 2px rgb(20 32 43 / 4%);
+}
+
+.card:hover {
+  border-color: #c9d4d0;
 }
 
 .grid h1,
@@ -28,9 +37,14 @@
   margin: 0 0 1rem;
 }
 
-.grid a {
+.cta {
+  margin-top: auto;
   color: var(--teal);
   font-weight: 650;
+}
+
+.cta::after {
+  content: "  ›";
 }
 
 @media (max-width: 800px) {

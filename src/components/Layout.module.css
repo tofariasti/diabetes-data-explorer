@@ -1,13 +1,15 @@
 .shell {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 16.5rem 1fr;
+  background: var(--canvas);
 }
 
 .skip {
   position: absolute;
   left: 0.75rem;
   top: -3rem;
+  z-index: 5;
   background: var(--ink);
   color: white;
   padding: 0.4rem 0.7rem;
@@ -18,72 +20,172 @@
   top: 0.75rem;
 }
 
-.header {
+.sidebar {
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  align-items: end;
-  padding: 1.25rem 6vw 1rem;
-  border-bottom: 1px solid var(--line);
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.6rem 1.15rem 1.4rem;
+  background: var(--ink);
+  color: #f4f7f6;
 }
 
 .kicker {
   margin: 0;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--teal);
+  font-size: 0.68rem;
+  color: #8fd0bf;
 }
 
 .brand {
-  margin: 0.15rem 0 0;
+  margin: 0.35rem 0 0;
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
+  line-height: 1.15;
 }
 
-.nav {
-  display: flex;
-  gap: 0.4rem;
+.sideNav,
+.tabNav {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav a {
-  display: inline-block;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
+.sideNav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sideNav a,
+.tabNav a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
-  color: var(--ink);
+  color: inherit;
 }
 
-.nav a:hover {
-  background: var(--paper);
+.sideNav a {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  color: #d5e0dc;
 }
 
-.nav a.active {
-  background: var(--ink);
+.sideNav a svg,
+.tabNav a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+.sideNav a:hover {
+  background: rgb(255 255 255 / 8%);
   color: white;
 }
 
+.sideNav a.active {
+  background: var(--teal);
+  color: white;
+}
+
+.asideNote {
+  margin-top: auto;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #b7c4c0;
+}
+
+.stage {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: none;
+}
+
 .main {
-  padding: 2rem 6vw 3rem;
+  padding: 2.25rem 3.2rem 3rem;
+  max-width: 72rem;
 }
 
-.footer {
-  padding: 1rem 6vw 1.4rem;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
+.tabbar {
+  display: none;
 }
 
-.footer p {
-  margin: 0;
-  max-width: 46rem;
-}
+@media (max-width: 800px) {
+  .shell {
+    grid-template-columns: 1fr;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
 
-@media (max-width: 720px) {
-  .header {
+  .sidebar {
+    display: none;
+  }
+
+  .stage {
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(3.25rem + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) 1rem 0;
+    background: rgb(255 255 255 / 88%);
+    backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topTitle {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  .main {
+    flex: 1;
+    overflow: auto;
+    padding: 1.1rem 1rem calc(5.4rem + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .tabbar {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgb(255 255 255 / 92%);
+    backdrop-filter: saturate(180%) blur(18px);
+    border-top: 1px solid var(--line);
+  }
+
+  .tabNav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tabNav a {
     flex-direction: column;
-    align-items: start;
+    gap: 0.15rem;
+    min-height: 3.4rem;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .tabNav a.active {
+    color: var(--teal);
   }
 }

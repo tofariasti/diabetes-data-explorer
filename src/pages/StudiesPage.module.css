@@ -77,3 +77,47 @@
 .pager button:disabled {
   opacity: 0.5;
 }
+
+@media (max-width: 800px) {
+  .intro h1 {
+    font-size: 1.7rem;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0.85rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+
+  .filters input,
+  .filters select,
+  .filters button,
+  .pager button {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .filters button {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+    font-weight: 650;
+  }
+
+  .list {
+    gap: 0.55rem;
+  }
+
+  .list li {
+    border-radius: 14px;
+  }
+
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
