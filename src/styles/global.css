@@ -1,0 +1,38 @@
+:root {
+  color: #1c1915;
+  background: #f6f1e7;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --teal: #0f6e56;
+  --paper: #fffaf3;
+  --line: #e2d8c8;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  font-weight: 560;
+  line-height: 1.15;
+}

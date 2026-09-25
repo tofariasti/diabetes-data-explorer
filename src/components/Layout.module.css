@@ -1,0 +1,89 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--ink);
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: end;
+  padding: 1.25rem 6vw 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--teal);
+}
+
+.brand {
+  margin: 0.15rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+}
+
+.nav {
+  display: flex;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav a:hover {
+  background: var(--paper);
+}
+
+.active {
+  background: var(--ink);
+  color: white;
+}
+
+.main {
+  padding: 2rem 6vw 3rem;
+}
+
+.footer {
+  padding: 1rem 6vw 1.4rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.footer p {
+  margin: 0;
+  max-width: 46rem;
+}
+
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+}

@@ -1,0 +1,55 @@
+.back {
+  margin: 0 0 0.8rem;
+}
+
+.back a {
+  color: var(--teal);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0 0 1rem;
+  max-width: 46rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+}
+
+.facts div {
+  padding: 0.8rem 0.9rem;
+  background: var(--paper);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.facts dt {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0.25rem 0 0;
+}
+
+.conditions,
+.summary,
+.note {
+  max-width: 46rem;
+}
+
+.note a {
+  color: var(--teal);
+}
+
+@media (max-width: 800px) {
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}

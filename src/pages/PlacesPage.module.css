@@ -1,0 +1,85 @@
+.intro h1 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  margin: 0 0 0.4rem;
+}
+
+.intro p,
+.note {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: end;
+  margin-bottom: 1.2rem;
+}
+
+.filters label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.filters button,
+.chart {
+  margin: 0;
+}
+
+.chart {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.chart li {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) 1fr auto;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.track {
+  display: block;
+  height: 0.7rem;
+  background: #e7e0d4;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--teal);
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5rem;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .chart li {
+    grid-template-columns: 1fr auto;
+  }
+
+  .track {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+}
