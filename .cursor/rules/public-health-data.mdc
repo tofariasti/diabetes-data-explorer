@@ -1,0 +1,20 @@
+---
+description: How to fetch and present public health data
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Public health data
+
+- Fetch in a dedicated module or hook, not inside JSX.
+- Normalize nested or missing fields before the component sees them.
+- Paginate on the server when the API supports it. Keep the page in the URL.
+- Type the error and show a sentence a person can act on. Offer a retry.
+- Say what the figure is, the year or status it covers, and what it is not.
+
+```tsx
+<p>
+  Age-adjusted prevalence for this county in {place.year}. This is a population
+  estimate, not a diagnosis.
+</p>
+```

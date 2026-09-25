@@ -1,0 +1,26 @@
+---
+description: React and TypeScript conventions for the explorer
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# React and TypeScript
+
+- Vite, React, and TypeScript with `strict`. Do not use `any`.
+- Function components and hooks only.
+- Keep server state in TanStack Query. Keep UI state in the component or the URL.
+- One component per file. Reusable logic goes in a `useX` hook.
+- Pass props explicitly. Use context only for something truly global.
+- Data screens render loading, empty, and error states.
+
+```tsx
+// Good: the query owns the request, the component owns the states
+const studies = useStudies(filters);
+
+if (studies.isPending) return <p>Loading studies…</p>;
+if (studies.isError) return <p role="alert">The study list could not be loaded.</p>;
+if (studies.data.length === 0) return <p>No studies match these filters.</p>;
+```
+
+- Use native buttons, labels on fields, visible focus, and semantic HTML.
+- Colocate styles in a CSS Module. Do not add a new global stylesheet per component.

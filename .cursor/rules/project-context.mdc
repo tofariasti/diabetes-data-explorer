@@ -1,0 +1,16 @@
+---
+description: Product framing for the public diabetes data explorer
+alwaysApply: true
+---
+
+# Project context
+
+This is a public-data explorer for a frontend portfolio. It is not a diagnostic, treatment, or recommendation tool.
+
+- Show search, filters, sorting, pagination, list and detail, and a chart when the screen calls for them.
+- Every data screen has loading, empty, and error states.
+- Use only aggregate, study, or regulatory public data. Never identifiable patients or PHI.
+- Name the source on the screen and say what the numbers are not.
+- At most three public APIs in v1. Prefer open CORS and an honest response shape.
+- v1 sources are ClinicalTrials.gov and CDC PLACES. Do not add WHO GHO until a proxy exists.
+- README and LinkedIn copy stay in plain language and never sound like medical advice.
