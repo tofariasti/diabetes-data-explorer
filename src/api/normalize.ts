@@ -35,7 +35,7 @@ export function formatStatus(status: string): string {
 export function formatPhase(phase: string): string {
   const match = /^PHASE(\d+)$/i.exec(phase);
   if (match) return `Phase ${match[1]}`;
-  if (!phase) return "";
+  if (!phase || phase.toUpperCase() === "NA") return "";
   return titleCaseToken(phase);
 }
 

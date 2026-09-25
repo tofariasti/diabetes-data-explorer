@@ -110,7 +110,7 @@ export function PlacesPage() {
           <input
             value={county}
             onChange={(event) => setCounty(event.target.value)}
-            placeholder="Loving"
+            placeholder="Optional"
           />
         </label>
         <button type="submit">Apply</button>

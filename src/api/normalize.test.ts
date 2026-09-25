@@ -12,7 +12,7 @@ describe("normalizeStudy", () => {
           },
           statusModule: { overallStatus: "RECRUITING" },
           conditionsModule: { conditions: ["Diabetes Mellitus"] },
-          designModule: { phases: ["PHASE2"] },
+          designModule: { phases: ["PHASE2", "NA"] },
         },
       }),
     ).toMatchObject({

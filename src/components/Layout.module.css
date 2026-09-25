@@ -61,7 +61,7 @@
   background: var(--paper);
 }
 
-.active {
+.nav a.active {
   background: var(--ink);
   color: white;
 }
